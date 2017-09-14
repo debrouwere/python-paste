@@ -1,3 +1,6 @@
+import re
+
+
 def kv(obj):
     if isinstance(obj, dict):
         return obj.items()
@@ -16,11 +19,13 @@ def paste(rows, delimiters, serialize=str):
 
 
 # a supercharged `split` function, the inverse of `paste`
-def cut(s, delimiters):
+def cut(s, delimiters, **kwargs):
     delimiter = delimiters[0]
     delimiters = delimiters[1:]
 
+    segments = re.split(delimiter, s, **kwargs)
+
     if len(delimiters):
-        return [cut(ss, delimiters) for ss in s.split(delimiter)]
+        return [cut(segment, delimiters) for segment in segments]
     else:
-        return s.split(delimiter)
+        return segments

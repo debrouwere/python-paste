@@ -17,10 +17,10 @@ def paste(rows, delimiters, serialize=str):
 
 # a supercharged `split` function, the inverse of `paste`
 def cut(s, delimiters):
-    delimiter = delimiters[-1]
-    delimiters = delimiters[:-1]
+    delimiter = delimiters[0]
+    delimiters = delimiters[1:]
 
     if len(delimiters):
-        return [cut(ss, *delimiters) for ss in cut(s, delimiter)]
+        return [cut(ss, delimiters) for ss in s.split(delimiter)]
     else:
         return s.split(delimiter)

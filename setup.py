@@ -2,8 +2,8 @@ import os
 
 from setuptools import find_packages, setup
 
-setup(name='paste',
-      version='0.2.0',
+setup(name='cutandpaste',
+      version='0.3.0',
       description=("Supercharged split and join operations, inspired on R."),
       #long_description=open('README.rst').read(),
       classifiers=['Development Status :: 4 - Beta',

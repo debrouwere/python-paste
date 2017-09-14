@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 setup(name='cutandpaste',
       version='0.3.0',
-      description=("Supercharged split and join operations, inspired on R."),
+      description=("Supercharged split and join operations, inspired on the eponymous R functions."),
       #long_description=open('README.rst').read(),
       classifiers=['Development Status :: 4 - Beta',
                    'Intended Audience :: Developers',

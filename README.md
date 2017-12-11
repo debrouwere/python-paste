@@ -22,3 +22,15 @@
 >>> cut('k1=v1;k2=v2', ';=')
 [['k1', 'v1'], ['k2', 'v2']]
 ```
+
+If you prefer, `recut` accepts delimiters ordered from smaller to larger
+units like `paste`, which feels less natural but makes these functions
+the exact inverse of each other.
+
+```python3
+>>> records = [['k1', 'v1'], ['k2', 'v2']]
+>>> recut(paste(records, '=;'), '=;')
+[['k1', 'v1'], ['k2', 'v2']]
+>>> cut(paste(records, '=;'), ';=')
+[['k1', 'v1'], ['k2', 'v2']]
+```
